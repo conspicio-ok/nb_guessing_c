@@ -20,18 +20,12 @@ int	ok_atoi(char *str)
 
 	nb = 0;
 	neg = 1;
-	while (*str == ' ' || *str == '\t')
-		str++;
-	while (*str == '+' || *str == '-')
-	{
-		if (*str == '-')
-			neg *= -1;
-		str++;
-	}
 	while (*str >= '0' && *str <= '9')
 	{
 		nb = nb * 10 + *str - '0';
 		str++;
 	}
+	if (*str != '\n')
+		return (-1);
 	return (nb * neg);
 }

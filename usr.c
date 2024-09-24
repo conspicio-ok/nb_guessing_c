@@ -91,6 +91,8 @@ char	*ok_scan(char *dest)
 		dest = ok_strjoin(dest, tmp);
 		if (!dest)
 			rd = 0;
+		if (rd < 16)
+			rd = 0;
 	}
 	free(tmp);
 	return (dest);
